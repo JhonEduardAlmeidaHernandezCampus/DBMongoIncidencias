@@ -1,0 +1,302 @@
+use("db_campus_incidencias")
+db.reports.insertMany(
+    [
+        {
+            id_report: 1,
+            id_trainer: 3,
+            name_insidence: "Software",
+            name_level_insidence: "Moderada",
+            description: "No le funciona el discord y el visual studio code",
+            date_report: new Date(),
+            id_computer: 1
+        },
+        {
+            id_report: 2,
+            id_trainer: 2,
+            name_insidence: "Hardware",
+            name_level_insidence: "Leve",
+            description: "Pequeño golpe en el teclado",
+            date_report: new Date(),
+            id_computer: 2
+        },
+        {
+            id_report: 3,
+            id_trainer: 1,
+            name_insidence: "Hardware",
+            name_level_insidence: "Critica",
+            description: "No prende el monitor",
+            date_report: new Date(),
+            id_computer: 3
+        },
+        {
+            id_report: 4,
+            id_trainer: 1,
+            name_insidence: "Software",
+            name_level_insidence: "Moderada",
+            description: "No carga el sistema operativo",
+            date_report: new Date(),
+            id_computer: 2
+        },
+        {
+            id_report: 5,
+            id_trainer: 2,
+            name_insidence: "Hardware",
+            name_level_insidence: "Critica",
+            description: "La CPU no prende, se considera que es la fuente",
+            date_report: new Date(),
+            id_computer: 4
+        },
+        {
+            id_report: 6,
+            id_trainer: 2,
+            name_insidence: "Software",
+            name_level_insidence: "Moderada",
+            description: "Al iniciar sale error de sistema en la pantalla",
+            date_report: new Date(),
+            id_computer: 5
+        },
+        {
+            id_report: 7,
+            id_trainer: 3,
+            name_insidence: "Hardware",
+            name_level_insidence: "Leve",
+            description: "El scroll del mouse no funciona",
+            date_report: new Date(),
+            id_computer: 3
+        },
+        {
+            id_report: 8,
+            id_trainer: 1,
+            name_insidence: "Software",
+            name_level_insidence: "Critica",
+            description: "Algunos programas no funcionan correctamente",
+            date_report: new Date(),
+            id_computer: 1
+        }
+    ]
+);
+
+use("db_campus_incidencias");
+db.trainers.insertMany(
+    [
+        {
+            id_trainer: 1,
+            name_trainer: "Camilo Sanchez",
+            email_personal_trainer: "camilo@gmail.com",
+            email_corporativo_trainer: "camilo.campus@gmail.com",
+            mobile_phone: "+57 3202214596",
+            home_phone: 6585512,
+            business_phone: "+57 3202214596",
+            business_mobile_phone: "+57 3202214596",
+        },
+        {
+            id_trainer: 2,
+            name_trainer: "Ricardo Arjona",
+            email_personal_trainer: "ricardo.185@gmail.com",
+            email_corporativo_trainer: "ricardo.campus@gmail.com",
+            mobile_phone: "+57 3113225457",
+            home_phone: 6212144,
+            business_phone: "+57 3113225457",
+            business_mobile_phone: "+57 3113225457",
+        },
+        {
+            id_trainer: 3,
+            name_trainer: "Jhon Hernandez",
+            email_personal_trainer: "jhonhernandez.1899@gmail.com",
+            email_corporativo_trainer: "jhonhernandez.campus@gmail.com",
+            mobile_phone: "+57 3005554711",
+            home_phone: 6558796,
+            business_phone: "+57 3005554711",
+            business_mobile_phone: "+57 3005554711",
+        }
+    ]
+);
+
+use("db_campus_incidencias");
+db.computer_inventory.insertMany(
+    [
+        {
+            id_computer: 1,
+            name_salon: "Apolo",
+            name_area: "Training",
+            serial_cpu: "AD2023082141AC",
+            serial_monitor: "AD2023082141AC",
+            serial_keyboard: "AD2023082141AC",
+            serial_mouse: "AD2023082141AC",
+            serial_headset: "AD2023082141AC",
+        },
+        {
+            id_computer: 2,
+            name_salon: "Sputnik",
+            name_area: "Training",
+            serial_cpu: "AB1234YZ5678CD",
+            serial_monitor: "AB1234YZ5678CD",
+            serial_keyboard: "AB1234YZ5678CD",
+            serial_mouse: "AB1234YZ5678CD",
+            serial_headset: "AB1234YZ5678CD"
+        },
+        {
+            id_computer: 3,
+            name_salon: "Corvus",
+            name_area: "Review",
+            serial_cpu: "BX574PK3920ZDX",
+            serial_monitor: "BX574PK3920ZDX",
+            serial_keyboard: "BX574PK3920ZDX",
+            serial_mouse: "BX574PK3920ZDX",
+            serial_headset: "BX574PK3920ZDX"
+        },
+        {
+            id_computer: 4,
+            name_salon: "Artemis",
+            name_area: "Training",
+            serial_cpu: "CN8217XKLM94YV",
+            serial_monitor: "CN8217XKLM94YV",
+            serial_keyboard: "CN8217XKLM94YV",
+            serial_mouse: "CN8217XKLM94YV",
+            serial_headset: "CN8217XKLM94YV"
+        },
+        {
+            id_computer: 5,
+            name_salon: "Endor",
+            name_area: "Review",
+            serial_cpu: "DP3097YWCX82TB",
+            serial_monitor: "DP3097YWCX82TB",
+            serial_keyboard: "DP3097YWCX82TB",
+            serial_mouse: "DP3097YWCX82TB",
+            serial_headset: "DP3097YWCX82TB"
+        },
+        {
+            id_computer: 6,
+            name_salon: "Corvus",
+            name_area: "Review",
+            serial_cpu: "EQ5631NZPQR6FS",
+            serial_monitor: "EQ5631NZPQR6FS",
+            serial_keyboard: "EQ5631NZPQR6FS",
+            serial_mouse: "EQ5631NZPQR6FS",
+            serial_headset: "EQ5631NZPQR6FS"
+        },
+        {
+            id_computer: 7,
+            name_salon: "Apolo",
+            name_area: "Training",
+            serial_cpu: "FR2074XJAB09HP",
+            serial_monitor: "FR2074XJAB09HP",
+            serial_keyboard: "FR2074XJAB09HP",
+            serial_mouse: "FR2074XJAB09HP",
+            serial_headset: "FR2074XJAB09HP"
+        },
+        {
+            id_computer: 8,
+            name_salon: "Artemis",
+            name_area: "Training",
+            serial_cpu: "GS8403MCXV5KLR",
+            serial_monitor: "GS8403MCXV5KLR",
+            serial_keyboard: "GS8403MCXV5KLR",
+            serial_mouse: "GS8403MCXV5KLR",
+            serial_headset: "GS8403MCXV5KLR"
+        },
+        {
+            id_computer: 9,
+            name_salon: "Endor",
+            name_area: "Review",
+            serial_cpu: "HT6138RPQDZ2YW",
+            serial_monitor: "HT6138RPQDZ2YW",
+            serial_keyboard: "HT6138RPQDZ2YW",
+            serial_mouse: "HT6138RPQDZ2YW",
+            serial_headset: "HT6138RPQDZ2YW"
+        },
+        {
+            id_computer: 10,
+            name_salon: "Skylab",
+            name_area: "Review",
+            serial_cpu: "JU5029LKVT87QX",
+            serial_monitor: "JU5029LKVT87QX",
+            serial_keyboard: "JU5029LKVT87QX",
+            serial_mouse: "JU5029LKVT87QX",
+            serial_headset: "JU5029LKVT87QX"
+        },
+        {
+            id_computer: 11,
+            name_salon: "Sputnik",
+            name_area: "Training",
+            serial_cpu: "KV4012YBSW63LP",
+            serial_monitor: "KV4012YBSW63LP",
+            serial_keyboard: "KV4012YBSW63LP",
+            serial_mouse: "KV4012YBSW63LP",
+            serial_headset: "KV4012YBSW63LP"
+        },
+        {
+            id_computer: 12,
+            name_salon: "Apolo",
+            name_area: "Training",
+            serial_cpu: "LW7320CTHDA1MN",
+            serial_monitor: "LW7320CTHDA1MN",
+            serial_keyboard: "LW7320CTHDA1MN",
+            serial_mouse: "LW7320CTHDA1MN",
+            serial_headset: "LW7320CTHDA1MN"
+        },
+        {
+            id_computer: 13,
+            name_salon: "Corvus",
+            name_area: "Review",
+            serial_cpu: "MX9256ZFHJP8VQ",
+            serial_monitor: "MX9256ZFHJP8VQ",
+            serial_keyboard: "MX9256ZFHJP8VQ",
+            serial_mouse: "MX9256ZFHJP8VQ",
+            serial_headset: "MX9256ZFHJP8VQ"
+        },
+        {
+            id_computer: 14,
+            name_salon: "Endor",
+            name_area: "Review",
+            serial_cpu: "NZ6481SGXED0RP",
+            serial_monitor: "NZ6481SGXED0RP",
+            serial_keyboard: "NZ6481SGXED0RP",
+            serial_mouse: "NZ6481SGXED0RP",
+            serial_headset: "NZ6481SGXED0RP"
+        },
+        {
+            id_computer: 15,
+            name_salon: "Sputnik",
+            name_area: "Training",
+            serial_cpu: "PD3895VJLQ72TS",
+            serial_monitor: "PD3895VJLQ72TS",
+            serial_keyboard: "PD3895VJLQ72TS",
+            serial_mouse: "PD3895VJLQ72TS",
+            serial_headset: "PD3895VJLQ72TS"
+        }
+    ]
+);
+
+use("db_campus_incidencias");
+db.roles.insertMany(
+    [
+        {
+            cc: 1,
+            password: "a1",
+            rol: "admin",
+            permisos: {
+                "/reports": ["3.0.0"],
+                "/trainers": ["3.0.0"],
+                "/computer_inventory": ["3.0.0"]
+            }
+        },
+        {
+            cc: 2,
+            password: "a2",
+            rol: "trainer",
+            permisos: {
+                "/reports": ["2.1.0"],
+                "/computer_inventory": ["2.1.0"],
+            }
+        },
+        {
+            cc: 3,
+            password: "a3",
+            rol: "camper",
+            permisos: {
+                "/computer_inventory": ["1.0.0"],
+            }
+        }
+    ]
+);
