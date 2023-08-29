@@ -1,6 +1,6 @@
 # DBMongoIncidencias
 
-Se crea una base de datos para la gestión de citas
+Se crea una base de datos para la gestión de incidencias, se hace con login y validacion de versiones
 
 
 
