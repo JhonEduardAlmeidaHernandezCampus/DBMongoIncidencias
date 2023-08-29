@@ -1,0 +1,224 @@
+use("db_campus_incidencias");
+db.createCollection("reports", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_trainer", "name_insidence", "name_level_insidence", "description", "date_report", "id_computer"],
+            properties: {
+                _id:{
+                    bsonType: 'objectId',
+                },
+                id_report: {
+                    bsonType: "int",
+                    description: "id_report is required"
+                },
+                id_trainer: {
+                    bsonType: "int",
+                    description: "id_trainer is required"
+                },
+                name_insidence: {
+                    bsonType: "string",
+                    enum: ["Software", "Hardware"],
+                    description: "name_insidence is required"
+                },
+                name_level_insidence: {
+                    bsonType: "string",
+                    enum: ["Leve", "Moderada", "Critica"],
+                    description: "name_level_insidence is required"
+                },
+                description: {
+                    bsonType: "string",
+                    maxLength: 400,
+                    description: "description is required"
+                },
+                date_report: {
+                    bsonType: "date",
+                    description: "date_report is required"
+                },
+                id_computer: {
+                    bsonType: "int",
+                    description: "id_computer is required"
+                }
+            }
+        }
+    }
+});
+
+use("db_campus_incidencias");
+db.createCollection("trainers", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_trainer", "name_trainer", "email_personal_trainer", "mobile_phone", "home_phone"],
+            properties: {
+                _id:{
+                    bsonType: 'objectId',
+                },
+                id_trainer: {
+                    bsonType: "int",
+                    description: "id_trainer is required"
+                },
+                name_trainer: {
+                    bsonType: "string",
+                    pattern: "[a-z-A-Z\s]+$",
+                    description: "name_trainer is required"
+                },
+                email_personal_trainer: {
+                    bsonType: "string",
+                    maxLength: 60,
+                    pattern: "[a-zA-Z0-9+@\.]+$",
+                    description: "email_personal_trainer is required"
+                },
+                email_corporativo_trainer: {
+                    bsonType: "string",
+                    maxLength: 60,
+                    pattern: "[a-zA-Z0-9+@\.]+$",
+                    description: "email_corporativo_trainer is required"
+                },
+                mobile_phone: {
+                    bsonType: "string",
+                    maxLength: 14,
+                    pattern: "[0-9\s\w]+$",
+                    description: "mobile_phone is required"
+                },
+                home_phone: {
+                    bsonType: "int",
+                    maxLength: 7,
+                    description: "home_phone is required"
+                },
+                business_phone: {
+                    bsonType: "string",
+                    maxLength: 14,
+                    pattern: "[0-9\s\w]+$",
+                    description: "business_phone is required"
+                },
+                business_mobile_phone: {
+                    bsonType: "string",
+                    maxLength: 14,
+                    pattern: "[0-9\s\w]+$",
+                    description: "business_mobile_phone is required"
+                }
+            }
+        }
+    }
+});
+
+use("db_campus_incidencias");
+db.createCollection("computer_inventory", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["name_salon", "name_area", "serial_cpu", "serial_monitor", "serial_keyboard", "serial_mouse", "serial_headset"],
+            properties: {
+                _id:{
+                    bsonType: 'objectId',
+                },
+                id_computer: {
+                    bsonType: "int",
+                    description: "id_computer is required"
+                },
+                name_salon: {
+                    bsonType: "string",
+                    enum: ["Apolo", "Artemis", "Sputnik", "Skylab", "Corvus", "Endor"], 
+                    description: "name_salon is required"
+                },
+                name_area: {
+                    bsonType: "string",
+                    enum: ["Training", "Review"], 
+                    description: "name_area is required"
+                },
+                serial_cpu: {
+                    bsonType: "string",
+                    maxLength: 30,
+                    pattern: "[A-Z0-9]+$",
+                    description: "serial_cpu is required"
+                },
+                serial_monitor: {
+                    bsonType: "string",
+                    maxLength: 30,
+                    pattern: "[A-Z0-9]+$",
+                    description: "serial_monitor is required"
+                },
+                serial_keyboard: {
+                    bsonType: "string",
+                    maxLength: 30,
+                    pattern: "[A-Z0-9]+$",
+                    description: "serial_keyboard is required"
+                },
+                serial_mouse: {
+                    bsonType: "string",
+                    maxLength: 30,
+                    pattern: "[A-Z0-9]+$",
+                    description: "serial_mouse is required"
+                },
+                serial_headset: {
+                    bsonType: "string",
+                    maxLength: 30,
+                    pattern: "[A-Z0-9]+$",
+                    description: "serial_headset is required"
+                }
+            }
+        }
+    }
+});
+
+use("db_campus_incidencias");
+db.createCollection("roles", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["cc", "password", "rol"],
+            properties: {
+                _id:{
+                    bsonType: 'objectId',
+                },
+                cc: {
+                    bsonType: "int",
+                    description: "id_rol is required"
+                },
+                password: {
+                    bsonType: "string",
+                    maxLength: 20,
+                    pattern: "[a-z-A-Z0-9\w]+$",
+                    description: "id_rol is required"
+                },
+                rol: {
+                    bsonType: "string",
+                    enum: ["admin", "trainer", "camper"],
+                    description: "id_rol is required"
+                },
+                permisos: {
+                    bsonType: "object",
+                    description: "ingrese los persmisos",
+                    properties: {
+                        "/reports": {
+                            bsonType: "array",
+                            items: {
+                                bsonType: "string",
+                                description: "Ingrese la versión"
+                            }
+                        },
+                        "/trainers": {
+                            bsonType: "array",
+                            items: {
+                                bsonType: "string",
+                                description: "Ingrese la versión"
+                            }
+                        },
+                        "/computer_inventory": {
+                            bsonType: "array",
+                            items: {
+                                bsonType: "string",
+                                description: "Ingrese la versión"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
